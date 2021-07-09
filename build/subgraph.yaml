@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: NonfungiblePositionManager
@@ -22,7 +22,7 @@ dataSources:
         - Transfer
       abis:
         - name: NonfungiblePositionManager
-          file: ./abis/NonfungiblePositionManager.json
+          file: NonfungiblePositionManager/abis/NonfungiblePositionManager.json
       eventHandlers:
         - event: Approval(indexed address,indexed address,indexed uint256)
           handler: handleApproval
@@ -36,4 +36,4 @@ dataSources:
           handler: handleIncreaseLiquidity
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: NonfungiblePositionManager/NonfungiblePositionManager.wasm
